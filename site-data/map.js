@@ -54,4 +54,5 @@ var UKyIcon = L.icon({
     popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
  });
 
-L.marker([38.0386253, -84.5042394], {icon: UKyIcon}).addTo(map);
+L.marker([38.0386253, -84.5042394], {icon: UKyIcon}).addTo(map).bindTooltip('Geography, y\'all!', {sticky: true, direction: 'auto'});
+
