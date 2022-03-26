@@ -122,11 +122,11 @@ ul {
 }
 
 
-.translucent-tooltip {
+.leaflet-tooltip {
   font-family: 'Lato';
   color: #ffff52;
   border: none;
-  font-size: 1em;
+  font-size: 1.5em;
   border-radius: 20px;
   background-color: rgba(0, 61, 85, 0.308);
   filter: drop-shadow(0rem 0rem .1rem #000000);
