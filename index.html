@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Mapping Kentucky's Owls</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  <!-- Leaflet v1.7.1 style sheet: -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <!-- Custom fonts: -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="/css/montserrat.css">
+  <!-- CSS for this page: -->
+  <link href="site-data/site.css" rel="stylesheet">
+  <style>
+    /* CSS overrides go in here */
+    .leaflet-control-layers {
+      width: 170px;
+      background: rgb(0, 0, 0);
+      opacity: .8;
+      text-align: left;
+      border-radius: 9%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="center">
+    <h1>Mapping Kentucky's Owls</h1>
+    <h2>natives and visitors</h2>
+  </header>
+  <div id='map' class="center"></div><br>
+  <div class="center-linkbox">Clicking on the map will overlay a range ring that's graduated at 250 km radius intervals
+    out to 1,000 km from the centre point.</div>
+  <section>
+    <footer>
+      <div class="row">
+        <div class="first-column">
+          <h3>🦉Kentucky's Eight Owls</h3>
+          <h4>as listed on <a href="https://avibirds.com/owls-of-kentucky/">AviBirds.com</a>:</h4>
+          <br><br>
+          <img class="max-image-width" src="images/GreatHornedOwlAdobeStock_61252701.jpeg" title="Great Horned Owl">
+          <div class="linkbox">
+            Great Horned Owl
+          </div>
+          <img class="max-image-width" src="images/BarredOwlAdobeStock_492137863.jpeg" title="Barred Owl">
+          <div class="linkbox">
+            Barred Owl
+          </div>
+          <img class="max-image-width" src="images/BarnOwlAdobeStock_103314895.jpeg" title="Barn Owl">
+          <div class="linkbox">
+            Barn Owl
+          </div>
+          <img class="max-image-width" src="images/EasternScreechOwlAdobeStock_338127944.jpeg"
+            title="Eastern Screech Owl">
+          <div class="linkbox">
+            Eastern Screech Owl
+          </div>
+          <img class="max-image-width" src="images/ShortEaredOwlAdobeStock_210749054.jpeg" title="Short-Eared Owl">
+          <div class="linkbox">
+            Short-Eared Owl (Winter Migrants)
+          </div>
+          <img class="max-image-width" src="images/LongEaredOwlAdobeStock_432460986.jpeg" title="Long-Eared Owl">
+          <div class="linkbox">
+            Long-Eared Owl
+          </div>
+          <img class="max-image-width" src="images/NorthernSawWhetOwlAdobeStock_18360777.jpeg"
+            title="Northern Saw-Whet Owl">
+          <div class="linkbox">
+            Northern Saw-Whet Owl (Winter Migrants)
+          </div>
+          <img class="max-image-width" src="images/SnowyOwlAdobeStock_245155139.jpeg" title="Snowy Owl">
+          <div class="linkbox">
+            Snowy Owl (Rare)
+          </div>
+        </div>
+        <div class="column">
+          <h3>Going Beyond Kentucky's Owls:</h3>
+          <p>We continue our study of owls with this final project for the <a
+              href="https://newmapsplus.github.io/map672/syllabus/">MAP 672: Programming For Web
+              Mapping</a>
+            course at the
+            <a href="https://newmapsplus.as.uky.edu/">University of Kentucky</a>. Previously, I mapped Snowy Owls to meet
+              the <a href="https://siriusbontea.github.io/snowy-owls/index.html">final project requirements for
+                MAP671</a>, and I discovered that these animals are capable of flying as far as Hawai`i in search of
+              food. Eight species of owls can be observed in the great state of Kentucky, with Snowy Owls, though rare
+              visitors to the commonwealth, making their appearance from time to time.</p>
+          <p>Together with Snowy Owls, Short-Eared and Northern Saw-Whet Owls visit Kentucky from their home ranges.
+            Snowy Owls aren't technically migratory, but the other two are winter migrants. The remaining five owl
+            species, the Great Horned Owls, Barred Owls Owls, Barn Owls, Eastern Screech Owls, and Long-Eared Owls, are
+            all natives to Kentucky.</p>
+          <p>Though these birds are not currently endangered, their numbers are declining due to habitat destruction and
+            the <a href="electricalpower/index.html">not-so-green "green energy" practices</a> of solar farms, biomass
+            powerplants, and wind farms. Environmental pollution also threatens the future of owls. Furthermore, the
+            quest for clean air, which is inherently a noble cause, has a dark side. Electric Vehicles use batteries
+            that require various rare earth minerals to function. Growing demand for these minerals requires a
+            tremendous increase in mining operations that threatens the environment and the interconnected ecosystems
+            from pollution and the destruction of habitats. For example, <a
+              href="https://therevelator.org/ev-batteries-seabed-mining/">mining the seabed for raw materials</a> has
+            the potential to cause devastating effects on the food chain, which can endanger all life, not just our
+            feathered friends.</p>
+          <p>Studying the splendour of the natural world and advocating for conservation is rewarding. It brings
+            much-needed awareness to the inner workings of various policy efforts, which sound good on the surface.
+            Advances in electric vehicles wouldn't be where they are today if not the result of strip mining Mother
+            Earth for her natural resources. To meet the demand for more batteries, <a
+              href="https://usa.streetsblog.org/2021/02/09/lithium-mining-and-the-hidden-environmental-costs-of-evs/">lithium
+              mining alone requires moving more tons of earth (resulting in environmental destruction) than mining
+              coal</a>. Still, as we dig deeper (no pun intended), we learn that the green movement isn't as green as
+            the intertwined corporate and government sponsors will have us believe. When <a
+              href="https://www.americaspower.org/its-time-to-end-subsidies-for-renewable-energy/">hundreds of billions
+              of dollars are tied up in government subsidies</a>, you can rest assured that truth in advertising is one
+            of the first casualties.</p>
+          <p>Owls are but a small part of the natural world, and Kentucky is a small corner of our natural world. This
+            simple mapping project highlights that both elements are interconnected with other ecosystems and physical
+            geographies. We need to better safeguard the environment for ourselves and future generations by holding the
+            cabal of government, corporate, and media interests accountable every time they lie to us about protecting
+            our environment. We only have one chance to get it right, and we should feel compelled to take action.</p>
+          <h3>Project Notes:</h3>
+          <ul>
+            <li>This webpage was built to meet requirements for Module 10 (Final Project) of the <a
+                href="https://newmapsplus.github.io/map672/syllabus/">MAP 672: Programming For Web
+                Mapping</a>
+              course at the
+              <a href="https://newmapsplus.as.uky.edu/">University of Kentucky</a>.
+            </li>
+          </ul>
+          <h3>Tools, citations, and methodology used in this project:</h3>
+          <ul>
+
+            <li>All software tools used in this project were ran on the <a
+                href="https://freebsdfoundation.org/freebsd-project/what-is-freebsd/">FreeBSD
+                13-RELEASE-p7</a>
+              Operating
+              System.
+            </li>
+
+            <li><a href="https://www.qgis.org/en/site/forusers/alldownloads.html#freebsd">QGIS 3.24.1-Tisler</a> was
+              used
+              to inspect data, crop eBird.org data, and perform format conversions of Shapefiles to GeoJSON.</li>
+
+            <li><a href="https://github.com/microsoft/vscodeVisual">Visual Studio Code - Open Source ("Code
+                - OSS")
+                1.64.2</a> was used for all coding with the following plugins installed: <a
+                href="https://beautifier.io/">Beautify</a>, <a
+                href="https://github.com/formulahendry/vscode-code-runner">Code
+                Runner</a>, and <a href="https://github.com/ritwickdey/vscode-live-server">Live
+                Server</a>.
+            <li>Code from <a href="https://leafletjs.com/SlavaUkraini/">Leaflet 1.7.1</a> used to create
+              the interactive webmap.</li>
+            <li>Owl range and predicted range data comes from <a
+                href="https://ebird.org/science/status-and-trends/download-data">eBird.org</a> in collaboration with <a
+                href="https://www.birds.cornell.edu/home/">the Cornell Lab of Ornithology</a> at Cornell University.
+            </li>
+            <li>eBird's data comes as Shapefiles of varying levels of resolutions depending on resesearch requirements.
+              Due to the size of some of the data files, the data was run through <a
+                href="https://mapshaper.org/">MapShaper</a> to simplify and reduce the size of the data files.</li>
+            <li>Shapefile for the North America Political Boundaries map comes from <a
+                href="https://www.sciencebase.gov/catalog/item/4fb555ebe4b04cb937751db9">USGS ScienceBase-Catalog</a>.
+              Shapefile was converted to a GeoJSON in QGIS for use as a webmap.</li>
+            <li>Kentucky boundary was extracted from the US Census Bureau’s <a
+                href="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html">TIGER/Line
+                Geodatabase.</a></li>
+            <li>The map uses the <a href="https://epsg.io/102321">ESRI 102321</a> NAD 1983 High Accuracy Regional
+              Network (HARN) State Plane North Dakota (South) FIPS 3302 Lambert Conformal Conic projection and centred
+              on <a href="https://en.wikipedia.org/wiki/Center%2C_North_Dakota">Center, North Dakota</a> which
+              coincidently happens to be the geographical centre of North America!</li>
+            <!-- <li>Code from <a href="http://code.jquery.com/">jQuery 3.6.0</a> is front loaded to enable
+            effects in
+            Leaflet.
+          </li> -->
+            <li>Code from <a href="https://cdnjs.com/libraries/proj4js/2.8.0/">Proj4js v2.8.0</a> is used to change
+              default map projection from WGS84 to EPSG 102008.</li>
+            <li>Code from <a href="https://cdnjs.com/libraries/proj4leaflet/">Proj4Leaflet v1.0.2</a> is used to enable
+              Proj4js in Leaflet.</li>
+            <li>Colour scheme for the map legend was chosen with the aid of <a
+                href="https://colorbrewer2.org/#type=sequential&scheme=YlGnBu&n=7">ColorBrewer2.org</a> to ensure
+              legibility for individuals with colour blindness.</li>
+            <li><a href="https://stock.adobe.com/uk/search/images?k=owls">Adobe Stock photos</a> with open licensing
+              were used as much as possible and are for illustrative and educational purposes with attribution to the
+              original sources as applicable.</li>
+
+            <li>Data accessed 25 March 2022.</li>
+        </div>
+      </div>
+  </section>
+  <footer>
+
+    <hr>
+
+    <h4 class="center">About the author:</h4>
+    <img id="avatar" class="center" src="site-data/graphics/profile_pic_bw.png">
+    <p id="bio">
+      An artist, scientist, bibliophile, and autodidact at heart, Sirius enjoys applying these
+      facets in his role of dad and husband first and foremost. He also finds happiness with
+      spending time with <a>Shin'yū the Maltipoo<span><img src="site-data/graphics/shin-yu.jpg"
+            alt="Fluffy Little Dog"></span></a>
+      (Shin'yū or 親友 is the Japanese term for "best friend"). Sirius also enjoys calligraphy,
+      metacognition, philosophy, and the pursuit of arcane knowledge regardless of the path it
+      puts him on. He generally prefers Open Source Software solutions such as FreeBSD for daily
+      computing, QGIS for cartography and geospatial analysis, GIMP and Inkscape for image
+      manipulation. However, he is no stranger to proprietary solutions such as ArcGIS Pro, Adobe
+      Photoshop and Illustrator.
+    </p>
+    <p id="linkedin"><i>Connect with <a href="https://www.linkedin.com/in/siriusbontea/">@SiriusBontea</a>
+        on LinkedIn:</i>
+      <br>
+    </p>
+    <p><a href="https://www.linkedin.com/in/siriusbontea/"><img
+          src="site-data/graphics/SiriusBonteaLinkedInQRcode150px.png" alt="Sirius T. Bontea @ LinkedIn" id="linkedin"
+          class="center"></a>
+    </p>
+    </div>
+
+    <hr>
+    <section class="center">
+      <a href="https://newmapsplus.github.io">
+        <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
+          alt="University of Kentucky Geography" class="image-glow">
+      </a>
+
+      <a href="https://uky-gis.github.io">
+        <img src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png" class="image-glow"
+          alt="University of Kentucky Geography">
+      </a>
+    </section>
+  </footer>
+  <!-- Load scripts using Subresource Integrity (SRI) is a security feature 
+      that enables browsers to verify that resources they fetch (from a CDN) 
+      are delivered without unexpected manipulation. -->
+  <!-- Leaflet v1.7.1 script from https://leafletjs.com/ - Make sure this is placed this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <!-- jQuery v3.6.0 script from https://jquery.com/ -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+  <!-- Simple Statistics v7.7.5 script from https://simplestatistics.org/ -->
+  <script src="https://unpkg.com/simple-statistics@7.7.5/dist/simple-statistics.min.js"></script>
+  <!-- Proj4js v2.8.0 script from https://cdnjs.com/libraries/proj4js/2.8.0 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"
+    integrity="sha512-ha3Is9IgbEyIInSb+4S6IlEwpimz00N5J/dVLQFKhePkZ/HywIbxLeEu5w+hRjVBpbujTogNyT311tluwemy9w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Proj4Leaflet v1.0.2 script from https://cdnjs.com/libraries/proj4leaflet -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"
+    integrity="sha512-GsAYl1wxzWW6azVpXkhyYfjMb2LbaOnlrqWMBdAk9xDcilinFvGMN+48Ajp/10u/9lcnh8YyS2CYNgung7ewHg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Initial setup of basemap -->
+  <script src="site-data/map.js"></script>
+  <!-- Bird Data Files -->
+  <script src="data/GreatHornedOwlRange.js"></script>
+  <script src="data/BarredOwlRange.js"></script>
+  <script src="data/BarnOwlRange.js"></script>
+  <script src="data/EasternScreechOwlRange.js"></script>
+  <script src="data/ShortEaredOwlRange.js"></script>
+  <script src="data/LongEaredOwlRange.js"></script>
+  <script src="data/NorthernSawWhetOwlRange.js"></script>
+  <script src="data/SnowyOwlRange.js"></script>
+  <script src="data/boundary_lines.js"></script>
+
+  <script>
+    // 🦉 Great Horned Owl layer
+    var greatHornedOwlRange = L.geoJson(greatHornedOwlData, {
+      style: function (feature) {
+        return {
+          color: '#8dd3c7',
+          fillColor: '#8dd3c7',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      },
+      onEachFeature: function (feature, layer) {
+        var popup = `<b>Great Horned Owl Range</b>`
+        layer.bindPopup(popup, {
+          direction: 'auto',
+          className: 'translucent-popup'
+        });
+        layer.on('mouseover', function (ev) {
+          layer.openPopup(ev.latlng);
+        });
+        layer.on('mousemove', function (ev) {
+          layer.openPopup(ev.latlng);
+        });
+        layer.on('mouseout', function () {
+          layer.closePopup();
+        });
+      }
+    }).addTo(map);
+
+    // to get mouseover/mouseout effects on Great Horned Owl layer
+    greatHornedOwlRange.eachLayer(function (layer) {
+      layer.on('mouseover', function (e) {
+        e.target.setStyle({
+          color: "yellow",
+          weight: 3,
+          opacity: .7,
+          fillOpacity: .9
+        })
+        this.openTooltip()
+      })
+      layer.on('mouseout', function (e) {
+        greatHornedOwlRange.resetStyle(layer)
+        this.closeTooltip()
+      })
+    });
+
+    // 🦉 Barred Owl layer
+    var barredOwlRange = L.geoJson(barredOwlData, {
+      style: function (feature) {
+        return {
+          color: '#ffffb3',
+          fillColor: '#ffffb3',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      },
+      onEachFeature: function (feature, layer) {
+        var popup = `<b>Barred Owl Range</b>`
+        layer.bindPopup(popup, {
+          direction: 'auto',
+          className: 'translucent-popup'
+        });
+        layer.on('mouseover', function (ev) {
+          layer.openPopup(ev.latlng);
+        });
+        layer.on('mousemove', function (ev) {
+          layer.openPopup(ev.latlng);
+        });
+        layer.on('mouseout', function () {
+          layer.closePopup();
+        });
+      }
+    });
+
+    // to get mouseover/mouseout effects on Barred Owl layer
+    barredOwlRange.eachLayer(function (layer) {
+      layer.on('mouseover', function (e) {
+        e.target.setStyle({
+          color: "yellow",
+          weight: 3,
+          opacity: .7,
+          fillOpacity: .9
+        })
+        this.openTooltip()
+      })
+      layer.on('mouseout', function (e) {
+        barredOwlRange.resetStyle(layer)
+        this.closeTooltip()
+      })
+    });
+
+    // 🦉 Barn Owl layer
+    var barnOwlRange = L.geoJson(barnOwlData, {
+      style: function (feature) {
+        return {
+          color: '#bebada',
+          fillColor: '#bebada',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      },
+      onEachFeature: function (feature, layer) {
+        var popup = `<b>Barn Owl Range</b>`
+        layer.bindPopup(popup, {
+          direction: 'auto',
+          className: 'translucent-popup'
+        });
+        layer.on('mouseover', function (ev) {
+          layer.openPopup(ev.latlng);
+        });
+        layer.on('mousemove', function (ev) {
+          layer.openPopup(ev.latlng);
+        });
+        layer.on('mouseout', function () {
+          layer.closePopup();
+        });
+      }
+    });
+
+    // to get mouseover/mouseout effects on Barn Owl layer
+    barnOwlRange.eachLayer(function (layer) {
+      layer.on('mouseover', function (e) {
+        e.target.setStyle({
+          color: "yellow",
+          weight: 3,
+          opacity: .7,
+          fillOpacity: .9
+        })
+        this.openTooltip()
+      })
+      layer.on('mouseout', function (e) {
+        barnOwlRange.resetStyle(layer)
+        this.closeTooltip()
+      })
+    });
+
+    // 🦉 Eastern Screech Owl layer
+    var easternScreechOwlRange = L.geoJson(easternScreechOwlData, {
+      style: function (feature) {
+        return {
+          color: '#fb8072',
+          fillColor: '#fb8072',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      }
+    });
+
+    // to get mouseover/mouseout effects on Eastern Screech Owl layer
+    easternScreechOwlRange.eachLayer(function (layer) {
+      layer.on('mouseover', function (e) {
+        e.target.setStyle({
+          color: "yellow",
+          weight: 3,
+          opacity: .7,
+          fillOpacity: .9
+        })
+        this.openTooltip()
+      })
+      layer.on('mouseout', function (e) {
+        barnOwlRange.resetStyle(layer)
+        this.closeTooltip()
+      })
+    });
+
+    // 🦉 Short-Eared Owl layer
+    var shortEaredOwlRange = L.geoJson(shortEaredOwlData, {
+      style: function (feature) {
+        return {
+          color: '#80b1d3',
+          fillColor: '#80b1d3',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      },
+    });
+
+    // 🦉 Long-Eared Owl layer
+    var longEaredOwlRange = L.geoJson(longEaredOwlData, {
+      style: function (feature) {
+        return {
+          color: '#fdb462',
+          fillColor: '#fdb462',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      }
+    });
+
+    // 🦉 Northern Saw-Whet Owl layer
+    var northernSawWhetOwlRange = L.geoJson(northernSawWhetOwlData, {
+      style: function (feature) {
+        return {
+          color: '#b3de69',
+          fillColor: '#b3de69',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      },
+    });
+
+    // 🦉 Snowy Owl layer
+    var snowyOwlRange = L.geoJson(snowyOwlData, {
+      style: function (feature) {
+        return {
+          color: '#fccde5',
+          fillColor: '#fccde5',
+          weight: 1,
+          fillOpacity: .6,
+          interactive: false
+        }
+      },
+    });
+
+    // layer controls check box
+    var sourceLabels = {
+      "<b style='color:#8dd3c7'>Great Horned Owl</b>": greatHornedOwlRange,
+      "<b style='color:#ffffb3'>Barred Owl</b>": barredOwlRange,
+      "<b style='color:#bebada'>Barn Owl</b>": barnOwlRange,
+      "<b style='color:#fb8072'>Eastern Screech Owl</b>": easternScreechOwlRange,
+      "<b style='color:#80b1d3'>Short-Eared Owl</b>": shortEaredOwlRange,
+      "<b style='color:#fdb462'>Long-Eared Owl</b>": longEaredOwlRange,
+      "<b style='color:#b3de69'>Northern Saw-Whet Owl</b>": northernSawWhetOwlRange,
+      "<b style='color:#fccde5'>Snowy Owl</b>": snowyOwlRange,
+    }
+    L.control.layers(null, sourceLabels, {
+        collapsed: false,
+        position: 'topleft',
+        autoZIndex: false,
+      })
+      .addTo(map);
+
+    // Adding to range circle to the map on mouse click
+    var radiusCentre = L.circle([0, 0], 5, { // centre red dot
+      fillOpacity: .1,
+      fillColor: 'red',
+      color: 'red',
+      opacity: 1,
+      stroke: true,
+      weight: 2,
+      interactive: false, // This allows users to click through the circle
+      autoZIndex: true, // This places the marker above other layers
+    })
+    var radiusCircle250 = L.circle([0, 0], 250000, { // 250km
+      fillColor: 'white',
+      fillOpacity: 0.05,
+      color: 'white',
+      opacity: .7,
+      stroke: true,
+      weight: .2,
+      interactive: false
+    })
+    var radiusCircle = L.circle([0, 0], 500000, { // 500km
+      fillColor: 'white',
+      fillOpacity: 0.05,
+      color: 'white',
+      opacity: .7,
+      stroke: true,
+      weight: .2,
+      interactive: false
+    })
+    var radiusCircle750 = L.circle([0, 0], 750000, { // 750km
+      fillColor: 'white',
+      fillOpacity: 0.05,
+      color: 'white',
+      opacity: .7,
+      stroke: true,
+      weight: .2,
+      interactive: false
+    })
+    var radiusBigCircle = L.circle([0, 0], 1000000, { // 1000km
+      fillColor: 'white',
+      fillOpacity: 0.05,
+      color: 'white',
+      opacity: .7,
+      stroke: true,
+      weight: .2,
+      interactive: false // This allows users to click through the circle
+    })
+    map.on('click', function (e) {
+      // center circle location on current click point
+      radiusCentre.setLatLng(e.latlng)
+        .addTo(map);
+      radiusCircle250.setLatLng(e.latlng)
+        .addTo(map);
+      radiusCircle.setLatLng(e.latlng)
+        .addTo(map);
+      radiusCircle750.setLatLng(e.latlng)
+        .addTo(map);
+      radiusBigCircle.setLatLng(e.latlng)
+        .addTo(map);
+    });
+
+    // Political Boundary Lines
+    fetch("data/boundary_lines.geojson")
+      .then(function (response) {
+        console.log(response)
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+      })
+      .then(function (data) {
+        var data = L.geoJson(data, {
+          style: function (feature) {
+            return {
+              color: '#ffffff',
+              weight: .5,
+              opacity: 1,
+              interactive: false
+            }
+          },
+
+        }).addTo(map);
+        drawMap(data)
+      })
+      .then(function () {
+        drawNewLayers()
+      })
+      .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+      });
+
+    // Kentucky Boundary Lines
+    fetch("data/Kentucky-boundary.geojson")
+      .then(function (response) {
+        console.log(response)
+        if (response.ok) {
+          return response.json()
+        } else {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+      })
+      .then(function (data) {
+        var data = L.geoJson(data, {
+          style: function (feature) {
+            return {
+              color: 'blue',
+              weight: 2,
+              opacity: 1,
+              fillColor: '#ffffff',
+              fillOpacity: .1,
+              interactive: false
+            }
+          },
+
+        }).addTo(map);
+        // drawMap(data)
+      })
+      .then(function () {
+        drawNewLayers()
+      })
+      .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+      });
+  </script>
+
+</body>
+
+</html>

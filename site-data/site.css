@@ -1,0 +1,360 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(83, 83, 83);
+  font-family: "Montserrat";
+  font-size: 100%;
+  font-weight: 300;
+  color: rgb(250, 250, 250);
+}
+
+header,
+footer,
+section {
+  /* padding: 6px 10%; */
+  margin: 0 auto;
+  width: 90%
+}
+
+h1 {
+  display: inline-block;
+  margin-right: auto 30px auto auto;
+  color: #73c0ff;
+  font-weight: 700;
+  filter: drop-shadow(0rem 0rem .4rem #000000);
+}
+
+h2 {
+  display: inline-block;
+  margin: auto auto auto 10px;
+  color: #ffcd2a;
+  font-family: 'Grand Hotel', cursive;
+  font-style: italic;
+  font-size: 2.5em;
+  filter: drop-shadow(0rem 0rem .2rem #c0c0c0);
+}
+
+h3 {
+  display: inline-block;
+  margin: auto;
+  font-weight: 700;
+}
+
+h4 {
+  display: inline-block;
+  margin: auto;
+  font-style: italic;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1em;
+  color: #ffffff;
+}
+
+a {
+  color: #73c0ff;
+  text-decoration: .1px underline dotted #6e6e6e;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ffee00;
+  filter: drop-shadow(0rem 0rem .4rem #ffffff);
+}
+
+ul {
+  padding: 6px 10%;
+  /* width: 80%; */
+}
+
+.rounded-image {
+  width: auto;
+  align-content: center;
+  border-radius: 3%;
+  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+}
+
+#map {
+  background: rgb(49, 49, 49);
+  width: 95%;
+  height: 60vh;
+  margin: none;
+  border-radius: 2%;
+  border: 3px solid #000000;
+  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+
+}
+
+.legend {
+  padding: 6px 8px;
+  background: rgba(44, 44, 44, 0.4);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+}
+
+.legend h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #001e36;
+  margin: 0 0 10px 0;
+}
+
+.legend span {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 0 10px 4px 0;
+}
+
+.legend label {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+  filter: drop-shadow(0rem 0rem .4rem #ffffff);
+}
+
+.legend label:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+
+.translucent-tooltip {
+  font-family: 'Lato';
+  color: #ffff52;
+  border: none;
+  font-size: 1em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.leaflet-tooltip-left:before {
+  right: 0;
+  margin-right: -13px;
+  border-right-color: transparent;
+  border-left-color: #ffee00;
+  background: transparent;
+  box-shadow: none;
+}
+
+.leaflet-tooltip-right:before {
+  left: 0;
+  margin-left: -13px;
+  border-left-color: transparent;
+  border-right-color: #ffee00;
+  background: transparent;
+  box-shadow: none;
+}
+
+.translucent-popup .leaflet-popup-content-wrapper {
+  font-family: "Montserrat";
+  color: #ffff52;
+  padding: none;
+  margin: none;
+  font-size: 1.2em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.translucent-popup .leaflet-popup-tip {
+  background: #ffee00a2;
+  border: none;
+  box-shadow: none;
+}
+
+ul {
+  padding: 0px 20px 4px 20px;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+li {
+  margin: 10px 0
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  height: 1px;
+  background: #63666a;
+
+}
+
+#avatar {
+  border-radius: 9%;
+  font-size: .8em;
+  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+}
+
+#bio {
+  font-size: 0.9em;
+  font-family: "Montserrat", sans-serif;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: justify;
+  align-items: center;
+  align-content: center;
+  line-height: 1.1em;
+
+}
+
+#bio img {
+  display: none;
+}
+
+#bio a:hover img {
+  display: block;
+  position: fixed;
+  bottom: 50px;
+  left: 100px;
+  width: 200px;
+  height: 200px;
+  z-index: 800;
+  border-radius: 100%;
+}
+
+#linkedin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4%;
+  width: auto;
+  font-size: .8em;
+  text-align: center;
+  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: auto;
+}
+
+
+.linkbox {
+  margin: 3px 0 20px 0;
+  display: block;
+  font-style: italic;
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 1.3em;
+}
+
+.center-linkbox {
+  display: block;
+  margin-left: 50%;
+  margin-right: 50%;
+  width: auto;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  margin: -17px 0 30px 0;
+  font-style: italic;
+  font-size: 0.8em;
+  font-weight: 300;
+  line-height: 1.3em;
+}
+
+.max-image-width {
+  width: 100%;
+  border-radius: 2%;
+  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+}
+
+/* Use float property to make two-column layout */
+.first-column {
+  float: left;
+  width: 49%;
+  padding-right: 2%;
+}
+
+.column {
+  float: left;
+  width: 49%;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* When browser is 900px wide or less */
+@media screen and (max-width: 900px) {
+
+  .first-column,
+  .second-column {
+      width: 100%;
+  }
+}
+.legend {
+  padding: 6px 8px;
+  background: rgba(209, 208, 208, 0.4);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+}
+
+#info-button {
+  padding: 6px 8px;
+  background: rgba(209, 208, 208, 0.4);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  padding: 8px 5px;
+  font-size: 0.9em;
+  font-weight: bolder;
+  /* Position is fixed next to the zoom bar */
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  /* Draw it on top of all elements */
+  z-index: 9999;
+  /* Cursor change on hover -- doesn't work on touch screensn */
+  cursor: pointer;
+}
+
+
+/* This section below controls the style for the info section on the bottom */
+#footer {
+  width: 100%;
+  background: rgba(107, 107, 107, 0.8);
+  color: rgba(20, 20, 20, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 0px;
+  padding: 0px;
+  /* display below the button to allow clicking if overlay covers screen */
+  z-index: 9000;
+  position: absolute;
+  /* 
+Hide the footer be default. This should not contain too much information. Like to a new page for extended content.
+*/
+  bottom: -10px;
+  /* If too much is included, enable scroll */
+  overflow: scroll;
+}
+
+#footer div {
+  padding: 10px;
+}
+
+#footer h1 {
+  font-size: 1.3em;
+  margin: 0 0 5px 0;
+}
+
+.footer-img {
+  float: right;
+  height: 10vh;
+  margin: 10px;
+}
