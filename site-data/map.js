@@ -56,3 +56,65 @@ var UKyIcon = L.icon({
 
 L.marker([38.0386253, -84.5042394], {icon: UKyIcon}).addTo(map).bindTooltip('Geography, y\'all!', {sticky: true, direction: 'auto'});
 
+// Political Boundary Lines
+fetch("data/boundary_lines.geojson")
+.then(function (response) {
+  console.log(response)
+  if (response.ok) {
+    return response.json()
+  } else {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+})
+.then(function (data) {
+  var data = L.geoJson(data, {
+    style: function (feature) {
+      return {
+        color: '#ffffff',
+        weight: .5,
+        opacity: 1,
+        interactive: false
+      }
+    },
+
+  }).addTo(map);
+  drawMap(data)
+})
+.then(function () {
+  drawNewLayers()
+})
+.catch(function (error) {
+  console.log(`Something went wrong: ${error}`);
+});
+
+// Kentucky Boundary Lines
+fetch("data/Kentucky-boundary.geojson")
+.then(function (response) {
+  console.log(response)
+  if (response.ok) {
+    return response.json()
+  } else {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+})
+.then(function (data) {
+  var data = L.geoJson(data, {
+    style: function (feature) {
+      return {
+        color: 'blue',
+        weight: 2,
+        opacity: 1,
+        fillColor: '#ffffff',
+        fillOpacity: .1,
+        interactive: false
+      }
+    },
+
+  }).addTo(map);
+})
+.then(function () {
+  drawNewLayers()
+})
+.catch(function (error) {
+  console.log(`Something went wrong: ${error}`);
+});
