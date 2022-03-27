@@ -1,3 +1,12 @@
+/* 
+			UKy Colors: 
+            #c7c9c8 light gray 
+            #63666a dark gray
+            #15397f dark blue
+            #009bda light blue
+            #0033a0 official blue
+        */
+
 body {
   margin: 0;
   padding: 0;
@@ -121,12 +130,96 @@ ul {
   clear: both;
 }
 
-
-.leaflet-tooltip {
+.greatHornedOwl-tooltip {
   font-family: 'Lato';
-  color: #ffff52;
-  border: none;
-  font-size: 1.5em;
+  font-weight: bold;
+  color: #8dd3c7;
+  border: 2px solid #8dd3c7;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.barredOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #ffffb3;
+  border: 2px solid #ffffb3;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.barnOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #bebada;
+  border: 2px solid #bebada;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.easternScreechOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #fb8072;
+  border: 2px solid #fb8072;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.shortEaredOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #80b1d3;
+  border: 2px solid #80b1d3;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.longEaredOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #fdb462;
+  border: 2px solid #fdb462;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.northernSawWhetOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #b3de69;
+  border: 2px solid #b3de69;
+  font-size: 1.4em;
+  border-radius: 20px;
+  background-color: rgba(0, 61, 85, 0.308);
+  filter: drop-shadow(0rem 0rem .1rem #000000);
+  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+}
+
+.snowyOwl-tooltip {
+  font-family: 'Lato';
+  font-weight: bold;
+  color: #fccde5;
+  border: 2px solid #fccde5;
+  font-size: 1.4em;
   border-radius: 20px;
   background-color: rgba(0, 61, 85, 0.308);
   filter: drop-shadow(0rem 0rem .1rem #000000);
@@ -151,17 +244,25 @@ ul {
   box-shadow: none;
 }
 
-.translucent-popup .leaflet-popup-content-wrapper {
-  font-family: "Montserrat";
-  color: #ffff52;
-  padding: none;
-  margin: none;
-  font-size: 1.2em;
-  border-radius: 20px;
-  background-color: rgba(0, 61, 85, 0.308);
-  filter: drop-shadow(0rem 0rem .1rem #000000);
-  text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
+.blue-tooltip {
+  font-family: 'Grand Hotel';
+  font-style: italic;
+  border-radius: 20%;
+  color: #0033a0;  
+  font-size: 2em;
+  background-color: #ffffff3b;
+  border: 2px solid #63666a48;
+  text-shadow: #ffffff 0rem 0rem 4px;
 }
+
+.leaflet-tooltip-left.blue-tooltip::before {
+  border-left-color: #63666a;
+}
+
+.leaflet-tooltip-right.blue-tooltip::before {
+  border-right-color: #63666a;
+}
+
 
 .translucent-popup .leaflet-popup-tip {
   background: #ffee00a2;
@@ -294,9 +395,10 @@ hr {
 
   .first-column,
   .second-column {
-      width: 100%;
+    width: 100%;
   }
 }
+
 .legend {
   padding: 6px 8px;
   background: rgba(209, 208, 208, 0.4);
