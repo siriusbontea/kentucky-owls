@@ -151,3 +151,24 @@
      autoZIndex: false,
    })
    .addTo(map);
+
+      /* --------------- Toggle on/off info footer content ---------------  */
+      var clicked = false // start with false condition
+      function myInfo() {
+
+          // create button that changes color on click
+          // create a footer overlay that displays 25% of the current viewport height
+          var x = document.getElementById('footer');
+          var y = document.getElementById('info-button');
+          if (clicked) {
+              y.style.background = '#161616d2'; // gray button
+              y.style.color = '#fafafa'
+              x.style.height = '0px'; // no footer height 
+          } else {
+              y.style.background = '#ffee0080' // orange button
+              y.style.color = '#000000'
+              x.style.height = '15vh'; // footer 15% of viewport height
+          }
+          clicked = !clicked
+
+      }

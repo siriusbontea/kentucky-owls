@@ -10,11 +10,11 @@
 body {
   margin: 0;
   padding: 0;
-  background: rgb(83, 83, 83);
+  background: #535353;
   font-family: "Montserrat";
   font-size: 100%;
   font-weight: 300;
-  color: rgb(250, 250, 250);
+  color: #fafafa;
 }
 
 header,
@@ -62,7 +62,7 @@ p {
 }
 
 a {
-  color: #73c0ff;
+  color: #a2d5ff;
   text-decoration: .1px underline dotted #6e6e6e;
 }
 
@@ -85,7 +85,7 @@ ul {
 }
 
 #map {
-  background: rgb(49, 49, 49);
+  background: #313131;
   width: 95%;
   height: 60vh;
   margin: none;
@@ -97,10 +97,10 @@ ul {
 
 .legend {
   padding: 6px 8px;
-  background: rgba(44, 44, 44, 0.4);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: #2c2c2c66;
+  box-shadow: 0 0 15px #00000033;
   border-radius: 8px;
-  color: rgb(0, 0, 0);
+  color: #000000;
 }
 
 .legend h3 {
@@ -173,7 +173,7 @@ ul {
   border: 2px solid #fb8072;
   font-size: 1.4em;
   border-radius: 20px;
-  background-color: rgba(0, 61, 85, 0.308);
+  background-color: #003d554f;
   filter: drop-shadow(0rem 0rem .1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
@@ -185,7 +185,7 @@ ul {
   border: 2px solid #80b1d3;
   font-size: 1.4em;
   border-radius: 20px;
-  background-color: rgba(0, 61, 85, 0.308);
+  background-color: #003d554f;
   filter: drop-shadow(0rem 0rem .1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
@@ -197,7 +197,7 @@ ul {
   border: 2px solid #fdb462;
   font-size: 1.4em;
   border-radius: 20px;
-  background-color: rgba(0, 61, 85, 0.308);
+  background-color: #003d554f;
   filter: drop-shadow(0rem 0rem .1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
@@ -209,7 +209,7 @@ ul {
   border: 2px solid #b3de69;
   font-size: 1.4em;
   border-radius: 20px;
-  background-color: rgba(0, 61, 85, 0.308);
+  background-color: #003d554f;
   filter: drop-shadow(0rem 0rem .1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
@@ -221,7 +221,7 @@ ul {
   border: 2px solid #fccde5;
   font-size: 1.4em;
   border-radius: 20px;
-  background-color: rgba(0, 61, 85, 0.308);
+  background-color: #003d554f;
   filter: drop-shadow(0rem 0rem .1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
@@ -352,15 +352,16 @@ hr {
 
 .center-linkbox {
   display: block;
+  color: #ffee00;
   margin-left: 50%;
   margin-right: 50%;
   width: auto;
   align-items: center;
   align-content: center;
   text-align: center;
-  margin: -17px 0 30px 0;
+  margin: 0 0 0 0;
   font-style: italic;
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: 300;
   line-height: 1.3em;
 }
@@ -402,48 +403,46 @@ hr {
 .legend {
   padding: 6px 8px;
   background: rgba(209, 208, 208, 0.4);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); */
   border-radius: 8px;
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
 }
 
 #info-button {
   padding: 6px 8px;
-  background: rgba(209, 208, 208, 0.4);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: #161616d2;
+  color: #fafafa;
+  /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
   border-radius: 8px;
-  color: rgb(0, 0, 0);
-  padding: 8px 5px;
+    padding: 1;
   font-size: 0.9em;
   font-weight: bolder;
   /* Position is fixed next to the zoom bar */
   position: fixed;
-  top: 15%;
-  right: 5%;
+  top: 1%;
+  right: 1%;
   /* Draw it on top of all elements */
   z-index: 9999;
   /* Cursor change on hover -- doesn't work on touch screensn */
   cursor: pointer;
 }
 
-
 /* This section below controls the style for the info section on the bottom */
 #footer {
   width: 100%;
-  background: rgba(107, 107, 107, 0.8);
-  color: rgba(20, 20, 20, 0.8);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: #161616d2;
+  box-shadow: 0 0 15px #00000080;
   height: 0px;
   padding: 0px;
   /* display below the button to allow clicking if overlay covers screen */
   z-index: 9000;
   position: absolute;
   /* 
-Hide the footer be default. This should not contain too much information. Like to a new page for extended content.
+Hide the footer be default. This should not contain too much information. Link to a new page for extended content.
 */
   bottom: -10px;
   /* If too much is included, enable scroll */
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 #footer div {
@@ -452,11 +451,33 @@ Hide the footer be default. This should not contain too much information. Like t
 
 #footer h1 {
   font-size: 1.3em;
-  margin: 0 0 5px 0;
+  color: #a2d5ff;
+  font-family: "Montserrat";
+  margin: 0 0 0 0;
+}
+
+#footer p {
+  font-size: 1.2em;
+  color: #fafafa;
+  font-family: "Montserrat";
+  padding-top: 1%;
+  padding-left: 5%;
+}
+
+#footer a {
+  color: #a2d5ff;
+  text-decoration: .1px underline dotted #6e6e6e;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+  color: #ffee00;
+  filter: drop-shadow(0rem 0rem .4rem #ffffff);
 }
 
 .footer-img {
   float: right;
   height: 10vh;
-  margin: 10px;
+  margin-left: 5%;
+  filter: drop-shadow(0px 0px 4px rgb(255, 255, 255))
 }

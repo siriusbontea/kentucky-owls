@@ -37,9 +37,19 @@
     <h1>Mapping Kentucky's Owls</h1>
     <h2>natives and visitors</h2>
   </header>
-  <div id='map' class="center"></div><br>
-  <div class="center-linkbox">Clicking on the map will overlay a range ring that's graduated at 250 km radius intervals
-    out to 1,000 km from the centre point.</div>
+  <div id='map' class="center">
+    <!-- this embeds and anchors the info button in the map <div> element -->
+    <button id="info-button" onclick="myInfo()">Information</button>
+    <div id='footer'>
+        <span class="center-linkbox">Clicking on the map will overlay a range ring that's graduated at 250 km radius intervals out to 1,000 km from the centre point.</span>
+        <div><img src="site-data/graphics/University_of_Kentucky_logo.svg" class="footer-img">
+        <h1 class="center">Owl Range Overlay Information</h1>
+        <p>The overlays for the eight species of owls depict the observed range and is derived through observational data and statistical modeling. A detailed explaination on the various metrics used for data calculations can be found at <a href="https://ebird.org/science/status-and-trends/faq">eBird.org's FAQ</a> section.</p>
+        
+      </div>
+    </div>
+  </div><br>
+ 
   <section>
     <footer>
       <div class="row">
@@ -175,7 +185,10 @@
               the interactive webmap.</li>
             <li>Owl range and predicted range data comes from <a
                 href="https://ebird.org/science/status-and-trends/download-data">eBird.org</a> in collaboration with <a
-                href="https://www.birds.cornell.edu/home/">the Cornell Lab of Ornithology</a> at Cornell University.
+                href="https://www.birds.cornell.edu/home/">the Cornell Lab of Ornithology</a> at Cornell
+              University.<br>Fink, D., T. Auer, A. Johnston, M. Strimas-Mackey, O. Robinson, S. Ligocki, W. Hochachka,
+              L. Jaromczyk, C. Wood, I. Davies, M. Iliff, L. Seitz. 2021. eBird Status and Trends, Data Version: 2020;
+              Released: 2021. Cornell Lab of Ornithology, Ithaca, New York.
             </li>
             <li>eBird's data comes as Shapefiles of varying levels of resolution depending on resesearch requirements.
               Due to the size of some of the data files, the data was run through <a
