@@ -442,7 +442,7 @@ Hide the footer be default. This should not contain too much information. Link t
 */
   bottom: -10px;
   /* If too much is included, enable scroll */
-  /* overflow: scroll; */
+  overflow: scroll;
 }
 
 #footer div {
