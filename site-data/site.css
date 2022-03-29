@@ -288,6 +288,14 @@ hr {
 
 }
 
+.image-glow a:hover {
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: drop-shadow(0rem 0rem .2rem #ffffff);
+}
+
 #avatar {
   border-radius: 9%;
   font-size: .8em;
@@ -329,7 +337,12 @@ hr {
   width: auto;
   font-size: .8em;
   text-align: center;
-  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+  filter: drop-shadow(0rem 0rem .2rem #414141);
+}
+
+#linkedin a:hover img {
+  display: block;
+  filter: drop-shadow(0rem 0rem .2rem #ffffff);
 }
 
 .center {
