@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background: #535353;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 100%;
   font-weight: 300;
   color: #fafafa;
@@ -22,7 +22,7 @@ footer,
 section {
   /* padding: 6px 10%; */
   margin: 0 auto;
-  width: 90%
+  width: 90%;
 }
 
 h1 {
@@ -30,17 +30,17 @@ h1 {
   margin-right: auto 30px auto auto;
   color: #73c0ff;
   font-weight: 700;
-  filter: drop-shadow(0rem 0rem .4rem #000000);
+  filter: drop-shadow(0rem 0rem 0.4rem #000000);
 }
 
 h2 {
   display: inline-block;
   margin: auto auto auto 10px;
   color: #ffcd2a;
-  font-family: 'Grand Hotel', cursive;
+  font-family: "Grand Hotel", cursive;
   font-style: italic;
   font-size: 2.5em;
-  filter: drop-shadow(0rem 0rem .2rem #c0c0c0);
+  filter: drop-shadow(0rem 0rem 0.2rem #c0c0c0);
 }
 
 h3 {
@@ -63,13 +63,13 @@ p {
 
 a {
   color: #a2d5ff;
-  text-decoration: .1px underline dotted #6e6e6e;
+  text-decoration: 0.1px underline dotted #6e6e6e;
 }
 
 a:hover {
   text-decoration: underline;
   color: #ffee00;
-  filter: drop-shadow(0rem 0rem .4rem #ffffff);
+  filter: drop-shadow(0rem 0rem 0.4rem #ffffff);
 }
 
 ul {
@@ -81,7 +81,7 @@ ul {
   width: auto;
   align-content: center;
   border-radius: 3%;
-  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+  filter: drop-shadow(0rem 0rem 0.2rem #8b8b8b);
 }
 
 #map {
@@ -91,8 +91,7 @@ ul {
   margin: none;
   border-radius: 2%;
   border: 3px solid #000000;
-  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
-
+  filter: drop-shadow(0rem 0rem 0.2rem #8b8b8b);
 }
 
 .legend {
@@ -118,111 +117,111 @@ ul {
 }
 
 .legend label {
-  font-family: 'Prompt', sans-serif;
+  font-family: "Prompt", sans-serif;
   font-size: 1em;
   font-weight: 600;
-  filter: drop-shadow(0rem 0rem .4rem #ffffff);
+  filter: drop-shadow(0rem 0rem 0.4rem #ffffff);
 }
 
 .legend label:after {
-  content: '';
+  content: "";
   display: block;
   clear: both;
 }
 
 .greatHornedOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #8dd3c7;
   border: 2px solid #8dd3c7;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: rgba(0, 61, 85, 0.308);
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .barredOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #ffffb3;
   border: 2px solid #ffffb3;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: rgba(0, 61, 85, 0.308);
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .barnOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #bebada;
   border: 2px solid #bebada;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: rgba(0, 61, 85, 0.308);
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .easternScreechOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #fb8072;
   border: 2px solid #fb8072;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: #003d554f;
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .shortEaredOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #80b1d3;
   border: 2px solid #80b1d3;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: #003d554f;
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .longEaredOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #fdb462;
   border: 2px solid #fdb462;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: #003d554f;
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .northernSawWhetOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #b3de69;
   border: 2px solid #b3de69;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: #003d554f;
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
 .snowyOwl-tooltip {
-  font-family: 'Lato';
+  font-family: "Lato";
   font-weight: bold;
   color: #fccde5;
   border: 2px solid #fccde5;
   font-size: 1.4em;
   border-radius: 20px;
   background-color: #003d554f;
-  filter: drop-shadow(0rem 0rem .1rem #000000);
+  filter: drop-shadow(0rem 0rem 0.1rem #000000);
   text-shadow: rgb(0, 0, 0) 0rem 0rem 2px;
 }
 
@@ -245,10 +244,10 @@ ul {
 }
 
 .blue-tooltip {
-  font-family: 'Grand Hotel';
+  font-family: "Grand Hotel";
   font-style: italic;
   border-radius: 20%;
-  color: #0033a0;  
+  color: #0033a0;
   font-size: 2em;
   background-color: #ffffff3b;
   border: 2px solid #63666a48;
@@ -263,7 +262,6 @@ ul {
   border-right-color: #63666a;
 }
 
-
 .translucent-popup .leaflet-popup-tip {
   background: #ffee00a2;
   border: none;
@@ -277,7 +275,7 @@ ul {
 }
 
 li {
-  margin: 10px 0
+  margin: 10px 0;
 }
 
 hr {
@@ -285,7 +283,6 @@ hr {
   border: 0;
   height: 1px;
   background: #63666a;
-
 }
 
 .image-glow a:hover {
@@ -293,13 +290,13 @@ hr {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  filter: drop-shadow(0rem 0rem .2rem #ffffff);
+  filter: drop-shadow(0rem 0rem 0.2rem #ffffff);
 }
 
 #avatar {
   border-radius: 9%;
-  font-size: .8em;
-  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+  font-size: 0.8em;
+  filter: drop-shadow(0rem 0rem 0.2rem #8b8b8b);
 }
 
 #bio {
@@ -311,7 +308,6 @@ hr {
   align-items: center;
   align-content: center;
   line-height: 1.1em;
-
 }
 
 #bio img {
@@ -335,14 +331,14 @@ hr {
   margin-right: auto;
   border-radius: 4%;
   width: auto;
-  font-size: .8em;
+  font-size: 0.8em;
   text-align: center;
-  filter: drop-shadow(0rem 0rem .2rem #414141);
+  filter: drop-shadow(0rem 0rem 0.2rem #414141);
 }
 
 #linkedin a:hover img {
   display: block;
-  filter: drop-shadow(0rem 0rem .2rem #ffffff);
+  filter: drop-shadow(0rem 0rem 0.2rem #ffffff);
 }
 
 .center {
@@ -352,7 +348,6 @@ hr {
   text-align: center;
   width: auto;
 }
-
 
 .linkbox {
   margin: 3px 0 20px 0;
@@ -382,7 +377,7 @@ hr {
 .max-image-width {
   width: 100%;
   border-radius: 2%;
-  filter: drop-shadow(0rem 0rem .2rem #8b8b8b);
+  filter: drop-shadow(0rem 0rem 0.2rem #8b8b8b);
 }
 
 /* Use float property to make two-column layout */
@@ -406,7 +401,6 @@ hr {
 
 /* When browser is 900px wide or less */
 @media screen and (max-width: 900px) {
-
   .first-column,
   .column {
     width: 100%;
@@ -427,7 +421,7 @@ hr {
   color: #fafafa;
   /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
   border-radius: 8px;
-    padding: 1;
+  padding: 1;
   font-size: 0.9em;
   font-weight: bolder;
   /* Position is fixed next to the zoom bar */
@@ -465,32 +459,32 @@ Hide the footer be default. This should not contain too much information. Link t
 #footer h1 {
   font-size: 1.3em;
   color: #a2d5ff;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   margin: 0 0 0 0;
 }
 
 #footer p {
   font-size: 1.2em;
   color: #fafafa;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   padding-top: 1%;
   padding-left: 5%;
 }
 
 #footer a {
   color: #a2d5ff;
-  text-decoration: .1px underline dotted #6e6e6e;
+  text-decoration: 0.1px underline dotted #6e6e6e;
 }
 
 #footer a:hover {
   text-decoration: underline;
   color: #ffee00;
-  filter: drop-shadow(0rem 0rem .4rem #ffffff);
+  filter: drop-shadow(0rem 0rem 0.4rem #ffffff);
 }
 
 .footer-img {
   float: right;
   height: 10vh;
   margin-left: 5%;
-  filter: drop-shadow(0px 0px 4px rgb(255, 255, 255))
+  filter: drop-shadow(0px 0px 4px rgb(255, 255, 255));
 }
