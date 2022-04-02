@@ -18,7 +18,7 @@ PROJCS["NAD_1983_HARN_StatePlane_North_Dakota_South_FIPS_3302",
 
 var naprj = {
   epsg: 'EPSG:102321',
-  def: '+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m no_defs',
+  def: '+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-90.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m no_defs',
   resolutions: [8192, 4096, 2048, 1024, 512, 256, 128],
   origin: [0, 0]
 }
