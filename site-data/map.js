@@ -17,16 +17,16 @@ PROJCS["NAD_1983_HARN_StatePlane_North_Dakota_South_FIPS_3302",
  */
 
 var naprj = {
-  epsg: 'EPSG:102321',
-  def: '+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-90.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m no_defs',
+  epsg: "EPSG:102321",
+  def: "+proj=lcc +lat_1=46.18333333333333 +lat_2=47.48333333333333 +lat_0=45.66666666666666 +lon_0=-90.5 +x_0=600000 +y_0=0 +ellps=GRS80 +units=m no_defs",
   resolutions: [8192, 4096, 2048, 1024, 512, 256, 128],
-  origin: [0, 0]
-}
+  origin: [0, 0],
+};
 
 var crs = new L.Proj.CRS(naprj.epsg, naprj.def, {
   resolutions: naprj.resolutions,
-  origin: naprj.origin
-})
+  origin: naprj.origin,
+});
 
 var options = {
   crs: crs,
@@ -36,38 +36,47 @@ var options = {
   //  center: [39.9989898, -102.0508567], // CO KS NE Triple Point
   // center: [47.1152105, -101.3031364], // Center, North Dakota - The Geographical Centre of North America!
   zoom: 2.5,
-  zoomSnap: .5,
+  zoomSnap: 0.5,
   zoomDelta: 0.2,
-  zoomControl: false
-}
-var map = L.map('map', options);
-map.attributionControl.setPrefix('');
+  zoomControl: false,
+};
+var map = L.map("map", options);
+map.attributionControl.setPrefix("");
+map.scrollWheelZoom.disable();
 
 //  L.control.zoom({
-//      position: 'bottomright'
+//      position: 'bottomleft'
 //  }).addTo(map);
 
 var UKyIcon = L.icon({
-  iconUrl: 'https://siriusbontea.github.io/kentucky-owls/site-data/graphics/Kentucky_Wildcats_logo.svg',
+  iconUrl:
+    "https://siriusbontea.github.io/kentucky-owls/site-data/graphics/Kentucky_Wildcats_logo.svg",
   iconSize: [30, 33], // size of the icon
   iconAnchor: [5, 10], // point of the icon which will correspond to marker's location
   popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
+  maxZoom: 50,
+  minZoom: 5,
 });
 
 L.marker([38.0386253, -84.5042394], {
-  icon: UKyIcon
-}).addTo(map).bindTooltip(`<img src='site-data/graphics/wildcats.png'><br>Geography, y'all!`, {
-  className: 'blue-tooltip',
-  maxWidth: 300,
-  sticky: true
-});
+  icon: UKyIcon,
+})
+  .addTo(map)
+  .bindTooltip(
+    `<img src='site-data/graphics/wildcats.png'><br>Geography, y'all!`,
+    {
+      className: "blue-tooltip",
+      maxWidth: 300,
+      sticky: true,
+    }
+  );
 
 // Political Boundary Lines
 fetch("data/boundary_lines.json")
   .then(function (response) {
-    console.log(response)
+    console.log(response);
     if (response.ok) {
-      return response.json()
+      return response.json();
     } else {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -76,18 +85,17 @@ fetch("data/boundary_lines.json")
     var data = L.geoJson(data, {
       style: function (feature) {
         return {
-          color: '#ffffff',
-          weight: .5,
+          color: "#ffffff",
+          weight: 0.5,
           opacity: 1,
-          interactive: false
-        }
+          interactive: false,
+        };
       },
-
     }).addTo(map);
-    drawMap(data)
+    drawMap(data);
   })
   .then(function () {
-    drawNewLayers()
+    drawNewLayers();
   })
   .catch(function (error) {
     console.log(`Something went wrong: ${error}`);
@@ -96,9 +104,9 @@ fetch("data/boundary_lines.json")
 // Kentucky Boundary Lines
 fetch("data/Kentucky-boundary.geojson")
   .then(function (response) {
-    console.log(response)
+    console.log(response);
     if (response.ok) {
-      return response.json()
+      return response.json();
     } else {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -107,19 +115,18 @@ fetch("data/Kentucky-boundary.geojson")
     var data = L.geoJson(data, {
       style: function (feature) {
         return {
-          color: 'blue',
+          color: "blue",
           weight: 2,
           opacity: 1,
-          fillColor: '#ffffff',
-          fillOpacity: .1,
-          interactive: false
-        }
+          fillColor: "#ffffff",
+          fillOpacity: 0.1,
+          interactive: false,
+        };
       },
-
     }).addTo(map);
   })
   .then(function () {
-    drawNewLayers()
+    drawNewLayers();
   })
   .catch(function (error) {
     console.log(`Something went wrong: ${error}`);
