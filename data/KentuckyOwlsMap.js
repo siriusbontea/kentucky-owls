@@ -12,7 +12,7 @@ var greatHornedOwlRange = L.geoJson(greatHornedOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #8dd3c7;";
-    const img = `<img src="/images/GreatHornedOwlAdobeStock_61252701.jpeg" alt="Great Horned Owl" style="${style}">`;
+    const img = `<img src="images/GreatHornedOwlAdobeStock_61252701.jpeg" alt="Great Horned Owl" style="${style}">`;
     const popup = `${img} Range of Great Horned Owl`;
     layer.bindTooltip(popup, {
       className: "greatHornedOwl-tooltip",
@@ -36,7 +36,7 @@ var barredOwlRange = L.geoJson(barredOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #ffffb3;";
-    const img = `<img src="/images/BarredOwlAdobeStock_492137863.jpeg" alt="Barred Owl" style="${style}">`;
+    const img = `<img src="images/BarredOwlAdobeStock_492137863.jpeg" alt="Barred Owl" style="${style}">`;
     const popup = `${img} Range of Barred Owl`;
     layer.bindTooltip(popup, {
       className: "barredOwl-tooltip",
@@ -60,7 +60,7 @@ var barnOwlRange = L.geoJson(barnOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #bebada;";
-    const img = `<img src="/images/BarnOwlAdobeStock_103314895.jpeg" alt="Barn Owl" style="${style}">`;
+    const img = `<img src="images/BarnOwlAdobeStock_103314895.jpeg" alt="Barn Owl" style="${style}">`;
     const popup = `${img} Range of Barn Owl`;
     layer.bindTooltip(popup, {
       className: "barnOwl-tooltip",
@@ -84,7 +84,7 @@ var easternScreechOwlRange = L.geoJson(easternScreechOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #fb8072;";
-    const img = `<img src="/images/EasternScreechOwlAdobeStock_338127944.jpeg" alt="Eastern Screech Owl" style="${style}">`;
+    const img = `<img src="images/EasternScreechOwlAdobeStock_338127944.jpeg" alt="Eastern Screech Owl" style="${style}">`;
     const popup = `${img} Range of Eastern Screech Owl`;
     layer.bindTooltip(popup, {
       className: "easternScreechOwl-tooltip",
@@ -108,7 +108,7 @@ var shortEaredOwlRange = L.geoJson(shortEaredOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #80b1d3;";
-    const img = `<img src="/images/ShortEaredOwlAdobeStock_210749054.jpeg" alt="Short-Eared Owl" style="${style}">`;
+    const img = `<img src="images/ShortEaredOwlAdobeStock_210749054.jpeg" alt="Short-Eared Owl" style="${style}">`;
     const popup = `${img} Range of Short-Eared Owl`;
     layer.bindTooltip(popup, {
       className: "shortEaredOwl-tooltip",
@@ -132,7 +132,7 @@ var longEaredOwlRange = L.geoJson(longEaredOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #fdb462;";
-    const img = `<img src="/images/LongEaredOwlAdobeStock_432460986.jpeg" alt="Long-Eared Owl" style="${style}">`;
+    const img = `<img src="images/LongEaredOwlAdobeStock_432460986.jpeg" alt="Long-Eared Owl" style="${style}">`;
     const popup = `${img} Range of Long-Eared Owl`;
     layer.bindTooltip(popup, {
       className: "longEaredOwl-tooltip",
@@ -156,7 +156,7 @@ var northernSawWhetOwlRange = L.geoJson(northernSawWhetOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #b3de69;";
-    const img = `<img src="/images/NorthernSawWhetOwlAdobeStock_18360777.jpeg" alt="Northern Saw-Whet Owl" style="${style}">`;
+    const img = `<img src="images/NorthernSawWhetOwlAdobeStock_18360777.jpeg" alt="Northern Saw-Whet Owl" style="${style}">`;
     const popup = `${img} Range of Northern Saw-Whet Owl`;
     layer.bindTooltip(popup, {
       className: "northernSawWhetOwl-tooltip",
@@ -180,7 +180,7 @@ var snowyOwlRange = L.geoJson(snowyOwlData, {
   onEachFeature: function (feature, layer) {
     const style =
       "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #fccde5;";
-    const img = `<img src="/images/SnowyOwlAdobeStock_245155139.jpeg" alt="Snowy Owl" style="${style}">`;
+    const img = `<img src="images/SnowyOwlAdobeStock_245155139.jpeg" alt="Snowy Owl" style="${style}">`;
     const popup = `${img} Range of Snowy Owl`;
     layer.bindTooltip(popup, {
       className: "snowyOwl-tooltip",
