@@ -63,7 +63,7 @@ L.marker([38.0386253, -84.5042394], {
 });
 
 // Political Boundary Lines
-fetch("data/boundary_lines.geojson")
+fetch("data/boundary_lines.json")
   .then(function (response) {
     console.log(response)
     if (response.ok) {
