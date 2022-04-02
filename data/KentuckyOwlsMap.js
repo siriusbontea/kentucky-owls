@@ -9,11 +9,17 @@
        interactive: true
      }
    },
- }).addTo(map).bindTooltip('Range of Great Horned Owl', {
-   className: 'greatHornedOwl-tooltip',
-   sticky: true,
-   direction: 'auto'
- });
+   onEachFeature: function (feature, layer) {
+     const style = 'width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #8dd3c7;'
+     const img = `<img src="../images/GreatHornedOwlAdobeStock_61252701.jpeg" alt="Great Horned Owl" style="${style}">`
+     const popup = `${img} Range of Great Horned Owl`
+     layer.bindTooltip(popup, {
+      className: 'greatHornedOwl-tooltip',
+      sticky: true,
+      direction: 'auto'
+    });
+   }
+ }).addTo(map)
 
  // 🦉 Barred Owl layer
  var barredOwlRange = L.geoJson(barredOwlData, {
