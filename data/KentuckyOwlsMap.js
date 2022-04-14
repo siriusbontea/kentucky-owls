@@ -11,9 +11,9 @@ var greatHornedOwlRange = L.geoJson(greatHornedOwlData, {
   },
   onEachFeature: function (feature, layer) {
     const style =
-      "width:100px;height:100px;object-fit:cover;vertical-align:middle;border-radius:50%;background-color:white;border:2px solid #8dd3c7;";
+      "width:100px;height:100px;object-fit:cover;vertical-align:middle;text-align:center;border-radius:50%;background-color:white;border:2px solid #8dd3c7;";
     const img = `<img src="images/GreatHornedOwlAdobeStock_61252701.jpeg" alt="Great Horned Owl" style="${style}">`;
-    const popup = `${img} Range of Great Horned Owl`;
+    const popup = `${img} Range of Great Horned Owl <br>(Bubo virginianus)`;
     layer.bindTooltip(popup, {
       className: "greatHornedOwl-tooltip",
       sticky: true,

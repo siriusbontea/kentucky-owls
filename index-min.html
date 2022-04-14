@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Mapping Kentucky's Owls</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link rel='icon' href='site-data/graphics/Kentucky_Wildcats_logo.svg' type='image/x-icon'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="site-data/L.Control.Zoomslider.css" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300,700&display=swap" rel="stylesheet">
+    <link href="site-data/site.css" rel="stylesheet">
+    <style>
+        .leaflet-control-layers {
+            width: 170px;
+            background: rgb(0, 0, 0);
+            opacity: .8;
+            text-align: left;
+            border-radius: 9%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="center">
+        <h1>Mapping Kentucky's Owls</h1>
+        <h2>natives and visitors</h2>
+    </header>
+    <div id='map' class="center"><button id="info-button" onclick="myInfo()">Information</button>
+        <div id='footer'><span class="center-linkbox">Clicking on the map will overlay a range ring that's graduated at
+                250 km radius intervals out to 1,000 km from the centre point.</span>
+            <div><img src="site-data/graphics/University_of_Kentucky_logo.svg" class="footer-img">
+                <h1 class="center">Owl Range Overlay Information</h1>
+                <p>The overlays for the eight species of owls depict the observed range and is derived through
+                    observational data and statistical modeling. A detailed explaination on the various metrics used for
+                    data calculations can be found at <a
+                        href="https://ebird.org/science/status-and-trends/faq">eBird.org's FAQ</a>section.</p>
+            </div>
+        </div>
+    </div><br>
+    <section>
+        <footer>
+            <div class="row">
+                <div class="first-column">
+                    <h3>🦉Kentucky's Eight Owls</h3>
+                    <h4>as listed on <a href="https://avibirds.com/owls-of-kentucky/">AviBirds.com</a>:</h4><br><br><img
+                        class="max-image-width" src="images/GreatHornedOwlAdobeStock_61252701.jpeg"
+                        title="Great Horned Owl">
+                    <div class="linkbox">A Great Horned Owl (Bubo virginianus) gliding over a meadow. <br>Photo by Chirs
+                        Hill - <a href="https://stock.adobe.com/uk/images/gliding-great-horned-owl/61252701">Adobe Stock
+                            #61252701</a>. </div><img class="max-image-width"
+                        src="images/BarredOwlAdobeStock_492137863.jpeg" title="Barred Owl">
+                    <div class="linkbox">A Barred Owl (Strix varia) perched on a snowy branch. <br>Photo by John - <a
+                            href="https://stock.adobe.com/uk/images/barred-owl-snowy-perch/492137863">Adobe Stock
+                            #492137863</a>. </div><img class="max-image-width"
+                        src="images/BarnOwlAdobeStock_103314895.jpeg" title="Barn Owl">
+                    <div class="linkbox">A close-up of a Barn Owl (Tyto alba). <br>Photo by anankkml - <a
+                            href="https://stock.adobe.com/uk/images/common-barn-owl-tyto-albahead-close-up/103314895">Adobe
+                            Stock #103314895</a>. </div><img class="max-image-width"
+                        src="images/EasternScreechOwlAdobeStock_338127944.jpeg" title="Eastern Screech Owl">
+                    <div class="linkbox">An Eastern Screech Owl (Megascops asio) perched on a branch. <br>Photo by
+                        Jennifer - <a
+                            href="https://stock.adobe.com/uk/images/an-eastern-gray-screech-owl-perched-on-a-branch/338127944">Adobe
+                            Stock #338127944</a></div><img class="max-image-width"
+                        src="images/ShortEaredOwlAdobeStock_210749054.jpeg" title="Short-Eared Owl">
+                    <div class="linkbox">A Short-Eared Owl (Asio flammeus) on a fence pole in the meadows of Noord
+                        Brabant near Rosmalen in the Netherlands. <br>Photo by henk bogaard - <a
+                            href="https://stock.adobe.com/uk/images/short-eared-owl-on-a-pole-in-the-meadows-of-noord-brabant-near-rosmalen-in-the-netherlands/210749054">Adobe
+                            Stock #210749054</a></div><img class="max-image-width"
+                        src="images/LongEaredOwlAdobeStock_432460986.jpeg" title="Long-Eared Owl">
+                    <div class="linkbox">A portrait of a Long-Eared Owl (Asio otus), also known as the northern
+                        long-eared owl, the lesser horned owl or cat owl as it sits perched in a tree cautiously staring
+                        and alert.<br>Photo by alan1951 - <a
+                            href="https://stock.adobe.com/uk/images/a-portrait-of-a-long-eared-owl-asio-otus-also-known-as-the-northern-long-eared-owl-the-lesser-horned-owl-or-cat-owl-as-it-sits-perched-in-a-tree-cautiously-staring-and-alert/432460986">Adobe
+                            Stock #432460986</a></div><img class="max-image-width"
+                        src="images/NorthernSawWhetOwlAdobeStock_18360777.jpeg" title="Northern Saw-Whet Owl">
+                    <div class="linkbox">This tiny owl is a Northern Saw-Whet Owl (Aegolius acadicus). <br>Photo by
+                        Megan Lorenz - <a href="https://stock.adobe.com/uk/images/tiny-owl/18360777">Adobe Stock
+                            #18360777</a></div><img class="max-image-width"
+                        src="images/SnowyOwlAdobeStock_245155139.jpeg" title="Snowy Owl">
+                    <div class="linkbox">A Snowy Owl (Bubo scandiacus) flying low hunting over an open sunny snowy
+                        cornfield in Ottawa, Canada. <br>Photo by jimcumming88 - <a
+                            href="https://stock.adobe.com/uk/images/snowy-owl-flying-low-hunting-over-an-open-sunny-snowy-cornfield-in-ottawa-canada/245155139">Adobe
+                            Stock #245155139</a></div>
+                </div>
+                <div class="column">
+                    <h3>Going Beyond Kentucky's Owls:</h3>
+                    <p>We continue our study of owls with this final project for the <a
+                            href="https://newmapsplus.github.io/map672/syllabus/">MAP 672: Programming For Web
+                            Mapping</a>course at the <a href="https://newmapsplus.as.uky.edu/">University of
+                            Kentucky</a>. Previously, I mapped Snowy Owls to meet the <a
+                            href="https://siriusbontea.github.io/snowy-owls/index.html">final project requirements for
+                            MAP671</a>, and I discovered that these animals are capable of flying as far as Hawai`i in
+                        search of food. Eight species of owls can be observed in the great state of Kentucky, with Snowy
+                        Owls, though rare visitors to the commonwealth, making their appearance from time to time.</p>
+                    <p>Together with Snowy Owls, Short-Eared and Northern Saw-Whet Owls visit Kentucky from their home
+                        ranges. Snowy Owls aren't technically migratory, but the other two are winter migrants. The
+                        remaining five owl species, the Great Horned Owls, Barred Owls, Barn Owls, Eastern Screech Owls,
+                        and Long-Eared Owls, are all natives to Kentucky.</p>
+                    <p>Though these birds are not currently endangered, their numbers are declining due to habitat
+                        destruction and the <a
+                            href="https://siriusbontea.github.io/electrical-power/index.html">not-so-green "green
+                            energy" practices</a>of solar farms, biomass powerplants, and wind farms. Environmental
+                        pollution also threatens the future of owls. Furthermore, the quest for clean air, which is
+                        inherently a noble cause, has a dark side. Electric Vehicles use batteries that require various
+                        rare earth minerals to function. Growing demand for these minerals requires a tremendous
+                        increase in mining operations that threatens the environment and the interconnected ecosystems
+                        from pollution and the destruction of habitats. For example, <a
+                            href="https://therevelator.org/ev-batteries-seabed-mining/">mining the seabed for raw
+                            materials</a>has the potential to cause devastating effects on the food chain, which can
+                        endanger all life, not just our feathered friends.</p>
+                    <p>Studying the splendour of the natural world and advocating for conservation is rewarding. It
+                        brings much-needed awareness to the inner workings of various policy efforts, which sound good
+                        on the surface. Advances in electric vehicles wouldn't be where they are today if not the result
+                        of strip mining Mother Earth for her natural resources. To meet the demand for more batteries,
+                        <a
+                            href="https://usa.streetsblog.org/2021/02/09/lithium-mining-and-the-hidden-environmental-costs-of-evs/">lithium
+                            mining alone requires moving more tons of earth (resulting in environmental destruction)
+                            than mining coal</a>. Still, as we dig deeper (no pun intended), we learn that the green
+                        movement isn't as green as the intertwined corporate and government sponsors will have us
+                        believe. When <a
+                            href="https://www.americaspower.org/its-time-to-end-subsidies-for-renewable-energy/">hundreds
+                            of billions of dollars are tied up in government subsidies</a>, you can rest assured that
+                        truth in advertising is one of the first casualties.</p>
+                    <p>Owls are but a small part of the natural world, and Kentucky is a small corner of our natural
+                        world. This simple mapping project highlights that both elements are interconnected with other
+                        ecosystems and physical geographies. We need to better safeguard the environment for ourselves
+                        and future generations by holding the cabal of government, corporate, and media interests
+                        accountable every time they lie to us about protecting our environment. We only have one chance
+                        to get it right, and we should feel compelled to take action.</p>
+                    <h3>Project Notes:</h3>
+                    <ul>
+                        <li>This webpage was built to meet requirements for Module 10 (Final Project) of the <a
+                                href="https://newmapsplus.github.io/map672/syllabus/">MAP 672: Programming For Web
+                                Mapping</a>course at the <a href="https://newmapsplus.as.uky.edu/">University of
+                                Kentucky</a>. </li>
+                    </ul>
+                    <h3>Tools, citations, and methodology used in this project:</h3>
+                    <ul>
+                        <li>All software tools used in this project were ran on the <a
+                                href="https://freebsdfoundation.org/freebsd-project/what-is-freebsd/">FreeBSD
+                                13-RELEASE-p7</a>Operating System. </li>
+                        <li><a href="https://www.qgis.org/en/site/forusers/alldownloads.html#freebsd">QGIS
+                                3.24.1-Tisler</a>was used to inspect data, crop eBird.org data, and perform format
+                            conversions of Shapefiles to GeoJSON.</li>
+                        <li><a href="https://github.com/microsoft/vscodeVisual">Visual Studio Code - Open Source ("Code
+                                - OSS") 1.64.2</a>was used for all coding with the following plugins installed: <a
+                                href="https://beautifier.io/">Beautify</a>, <a
+                                href="https://github.com/formulahendry/vscode-code-runner">Code Runner</a>, and <a
+                                href="https://github.com/ritwickdey/vscode-live-server">Live Server</a>.
+                        <li>Code from <a href="https://leafletjs.com/SlavaUkraini/">Leaflet 1.7.1</a>used to create the
+                            interactive webmap.</li>
+                        <li>Owl range and predicted range data comes from <a
+                                href="https://ebird.org/science/status-and-trends/download-data">eBird.org</a>in
+                            collaboration with <a href="https://www.birds.cornell.edu/home/">the Cornell Lab of
+                                Ornithology</a>at Cornell University.<br>Fink, D., T. Auer, A. Johnston, M.
+                            Strimas-Mackey, O. Robinson, S. Ligocki, W. Hochachka, L. Jaromczyk, C. Wood, I. Davies, M.
+                            Iliff, L. Seitz. 2021. eBird Status and Trends, Data Version: 2020; Released: 2021. Cornell
+                            Lab of Ornithology, Ithaca, New York. </li>
+                        <li>eBird's data comes as Shapefiles of varying levels of resolution depending on resesearch
+                            requirements. Due to the size of some of the data files, the data was run through <a
+                                href="https://mapshaper.org/">MapShaper</a>to simplify and reduce the size of the data
+                            files.</li>
+                        <li>Shapefile for the North America Political Boundaries map comes from <a
+                                href="https://www.sciencebase.gov/catalog/item/4fb555ebe4b04cb937751db9">USGS
+                                ScienceBase-Catalog</a>. Shapefile was converted to a GeoJSON in QGIS for use as a
+                            webmap.</li>
+                        <li>Kentucky boundary was extracted from the US Census Bureau’s <a
+                                href="https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html">TIGER/Line
+                                Geodatabase.</a></li>
+                        <li>The map uses the <a href="https://epsg.io/102321">ESRI 102321</a>NAD 1983 High Accuracy
+                            Regional Network (HARN) State Plane North Dakota (South) FIPS 3302 Lambert Conformal Conic
+                            projection and centred on <a
+                                href="https://en.wikipedia.org/wiki/Center%2C_North_Dakota">Center, North
+                                Dakota</a>which coincidently happens to be the geographical centre of North America!
+                        </li>
+                        <li>Code from <a href="https://cdnjs.com/libraries/proj4js/2.8.0/">Proj4js v2.8.0</a>is used to
+                            change default map projection from WGS84 to EPSG 102321.</li>
+                        <li>Code from <a href="https://cdnjs.com/libraries/proj4leaflet/">Proj4Leaflet v1.0.2</a>is used
+                            to enable Proj4js in Leaflet.</li>
+                        <li>Colour scheme for the map legend was chosen with the aid of <a
+                                href="https://colorbrewer2.org/#type=sequential&scheme=YlGnBu&n=7">ColorBrewer2.org</a>to
+                            ensure legibility for individuals with colour blindness.</li>
+                        <li><a href="https://stock.adobe.com/uk/search/images?k=owls">Adobe Stock photos</a>with open or
+                            educational licensing were used for illustrative and educational purposes with attribution
+                            and links to the original sources as applicable.</li>
+                        <li>The <a href="https://www.gimp.org/">GIMP v2.10.30</a>was used to reduce the resolution and
+                            file size the stock photos to speed loading times.</li>
+                        <li>Data accessed 26 March 2022.</li>
+                </div>
+            </div>
+    </section>
+    <footer>
+        <hr>
+        <h4 class="center">About the author:</h4><img id="avatar" class="center"
+            src="site-data/graphics/profile_pic_bw.png">
+        <p id="bio">An artist, scientist, bibliophile, and autodidact at heart, Sirius enjoys applying these facets in
+            his role of dad and husband first and foremost. He also finds happiness with spending time with <a>Shin'yū
+                the Maltipoo<span><img src="site-data/graphics/shin-yu.jpg" alt="Fluffy Little Dog"></span></a>(Shin'yū
+            or 親友 is the Japanese term for "best friend"). Sirius also enjoys calligraphy, metacognition, philosophy,
+            and the pursuit of arcane knowledge regardless of the path it puts him on. He generally prefers Open Source
+            Software solutions such as FreeBSD for daily computing, QGIS for cartography and geospatial analysis, GIMP
+            and Inkscape for image manipulation. However, he is no stranger to proprietary solutions such as ArcGIS Pro,
+            Adobe Photoshop and Illustrator. </p>
+        <p id="linkedin"><i>Connect with <a href="https://www.linkedin.com/in/siriusbontea/">@SiriusBontea</a>on
+                LinkedIn:</i><br></p>
+        <p><a href="https://www.linkedin.com/in/siriusbontea/"><img
+                    src="site-data/graphics/SiriusBonteaLinkedInQRcode150px.png" alt="Sirius T. Bontea @ LinkedIn"
+                    id="linkedin" class="linkedin"></a></p>
+        </div>
+        <hr>
+        <section class="center"><a href="https://newmapsplus.github.io"><img
+                    src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
+                    alt="University of Kentucky Geography" class="image-glow"></a><a
+                href="https://uky-gis.github.io"><img
+                    src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png"
+                    class="image-glow" alt="University of Kentucky Geography"></a></section>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="site-data/L.Control.Zoomslider.js"></script>
+    <script src="https://unpkg.com/simple-statistics@7.7.5/dist/simple-statistics.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.8.0/proj4.js"
+        integrity="sha512-ha3Is9IgbEyIInSb+4S6IlEwpimz00N5J/dVLQFKhePkZ/HywIbxLeEu5w+hRjVBpbujTogNyT311tluwemy9w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"
+        integrity="sha512-GsAYl1wxzWW6azVpXkhyYfjMb2LbaOnlrqWMBdAk9xDcilinFvGMN+48Ajp/10u/9lcnh8YyS2CYNgung7ewHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="site-data/map.js"></script>
+    <script src="data/GreatHornedOwlRange.js"></script>
+    <script src="data/BarredOwlRange.js"></script>
+    <script src="data/BarnOwlRange.js"></script>
+    <script src="data/EasternScreechOwlRange.js"></script>
+    <script src="data/ShortEaredOwlRange.js"></script>
+    <script src="data/LongEaredOwlRange.js"></script>
+    <script src="data/NorthernSawWhetOwlRange.js"></script>
+    <script src="data/SnowyOwlRange.js"></script>
+    <script src="data/KentuckyOwlsMap.js"></script>
+    <script src="data/RangeOverlay.js"></script>
+</body>
+
+</html>
